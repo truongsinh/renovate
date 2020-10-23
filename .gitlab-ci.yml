@@ -9,4 +9,7 @@ cache:
 run-renovate:
   script:
     - npm i
+    - pwd
+    - ls -la
+    - ls -la tmp
     - npm start -- ms/ms-dashboard

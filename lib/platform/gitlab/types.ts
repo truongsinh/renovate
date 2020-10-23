@@ -15,6 +15,7 @@ export type RepoResponse = {
   mirror: boolean;
   default_branch: string;
   empty_repo: boolean;
+  ssh_url_to_repo: string;
   http_url_to_repo: string;
   forked_from_project: boolean;
   repository_access_level: 'disabled' | 'private' | 'enabled';

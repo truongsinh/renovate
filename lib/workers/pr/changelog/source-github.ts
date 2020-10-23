@@ -49,6 +49,10 @@ export async function getChangeLogJSON({
     hostType: PLATFORM_TYPE_GITHUB,
     url,
   });
+  logger.info('config');
+  // throw Error('s');
+  logger.info(JSON.stringify(config));
+  logger.info('/config');
   // istanbul ignore if
   if (!config.token) {
     if (host.endsWith('github.com')) {

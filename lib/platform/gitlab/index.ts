@@ -186,6 +186,12 @@ export async function initRepo({
     });
     let url: string;
     if (
+      true /* @TODO some config to try using ssh_url_to_repo */ &&
+      res.body.ssh_url_to_repo
+    ) {
+      url = res.body.ssh_url_to_repo;
+      // throw Error('you know what to do');
+    } else if (
       process.env.GITLAB_IGNORE_REPO_URL ||
       res.body.http_url_to_repo === null
     ) {

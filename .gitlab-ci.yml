@@ -1,0 +1,12 @@
+image: node:14
+
+cache:
+  key: 'all'
+  paths:
+    - .npm
+    - node_modules
+
+run-renovate:
+  script:
+    - npm i
+    - npm start -- ms/ms-dashboard

@@ -66,9 +66,11 @@ export function getConfig(env: NodeJS.ProcessEnv): RenovateConfig {
   }
 
   if (env.SSH_KEY_PATH) {
+    const sshKeyPath = env.SSH_KEY_PATH;
     config.hostRules.push({
-      sshKeyPath: env.SSH_KEY_PATH,
+      sshKeyPath,
     });
+    process.env.GIT_SSH_COMMAND += ` -i ${sshKeyPath}`;
   }
 
   if (env.DOCKER_USERNAME && env.DOCKER_PASSWORD) {

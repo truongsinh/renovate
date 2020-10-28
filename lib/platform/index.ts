@@ -123,6 +123,7 @@ export async function initPlatform(
   });
   returnConfig.hostRules = returnConfig.hostRules || [];
   returnConfig.hostRules.push(platformRule);
+  logger.info(platformRule);
   hostRules.add(platformRule);
   return returnConfig;
 }

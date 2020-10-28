@@ -65,6 +65,12 @@ export function getConfig(env: NodeJS.ProcessEnv): RenovateConfig {
     });
   }
 
+  if (env.SSH_KEY_PATH) {
+    config.hostRules.push({
+      sshKeyPath: env.SSH_KEY_PATH,
+    });
+  }
+
   if (env.DOCKER_USERNAME && env.DOCKER_PASSWORD) {
     config.hostRules.push({
       hostType: datasourceDocker.id,

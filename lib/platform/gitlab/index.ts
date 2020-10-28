@@ -197,6 +197,8 @@ export async function initRepo({
         host,
         repository,
       });
+    } else if (opts.sshKeyPath) {
+      url = res.body.ssh_url_to_repo;
     } else {
       logger.debug(`${repository} http URL = ${res.body.http_url_to_repo}`);
       const repoUrl = URL.parse(`${res.body.http_url_to_repo}`);
